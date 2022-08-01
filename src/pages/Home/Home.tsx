@@ -1,4 +1,8 @@
-import PageContainer from '@/components/PageContainer'
+import PageContainer from 'components/PageContainer'
+import { useAstronomyPictureInfos } from 'hooks/nasa'
+
 export default function Home() {
-    return <PageContainer>Home</PageContainer>
+    const { astronomyPictureInfos, loadingSpinner } = useAstronomyPictureInfos()
+    console.log({ astronomyPictureInfos })
+    return <PageContainer>Home{loadingSpinner}</PageContainer>
 }
